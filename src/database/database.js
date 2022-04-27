@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+const remoteurl = 'mongodb+srv://root:root@cluster0.m0s67.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const localurl = 'mongodb://localhost:27017/paletas-db';
 
 const connectToDatabase = () => {
   mongoose
-    .connect('mongodb://localhost:27017/paletas-db', {
+    .connect(`${remoteurl}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
